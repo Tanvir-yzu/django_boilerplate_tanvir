@@ -35,18 +35,18 @@ LOGGING = {
         'file': {
             'level': 'DEBUG',
             'formatter': 'verbose',
-            'class': 'logging.handlers.TimedRotatingFileHandler',
+            'class': 'logging.handlers.RotatingFileHandler',  # Changed to RotatingFileHandler
             'filename': os.path.join(LOGS_DIR, "debug.log"),
-            'when': 'midnight',
-            'backupCount': 30,
+            'maxBytes': 10 * 1024 * 1024,  # 10 MB
+            'backupCount': 10,
         },
         'warnings_file': {
             'level': 'WARNING',
             'formatter': 'verbose',
-            'class': 'logging.handlers.TimedRotatingFileHandler',
+            'class': 'logging.handlers.RotatingFileHandler',  # Changed to RotatingFileHandler
             'filename': os.path.join(LOGS_DIR, "warnings.log"),
-            'when': 'midnight',
-            'backupCount': 30,
+            'maxBytes': 10 * 1024 * 1024,  # 10 MB
+            'backupCount': 10,
         },
     },  # handlers
     'loggers': {

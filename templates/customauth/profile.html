@@ -1,0 +1,39 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<div class="max-w-5xl mx-auto mt-10 px-4">
+  <!-- Profile Header -->
+  <div class="flex flex-col sm:flex-row items-center sm:items-start bg-gray-800 p-6 rounded-2xl shadow-lg">
+    <img src="https://ui-avatars.com/api/?name={{ request.user.profile.name|default:'U' }}" 
+         alt="Profile Photo" 
+         class="w-28 h-28 rounded-full border-4 border-yellow-400 shadow-md object-cover" />
+
+    <div class="sm:ml-6 mt-4 sm:mt-0 text-center sm:text-left">
+      <h2 class="text-2xl font-semibold text-yellow-400">{{ request.user.profile.name }}</h2>
+      <p class="text-gray-300 mt-1">{{ request.user.email }}</p>
+      <p class="text-sm text-gray-400 mt-2">Member since {{ request.user.date_joined|date:"F Y" }}</p>
+    </div>
+  </div>
+
+  <!-- Profile Tabs -->
+  <div class="mt-8">
+    <div class="flex space-x-4 border-b border-gray-700 pb-2">
+      <button class="text-yellow-400 font-medium border-b-2 border-yellow-400 pb-1">Overview</button>
+      <button class="text-gray-400 hover:text-yellow-400 transition">Achievements</button>
+      <button class="text-gray-400 hover:text-yellow-400 transition">Settings</button>
+    </div>
+
+    <!-- Tab Content: Overview -->
+    <div class="mt-6 text-gray-300">
+      <h3 class="text-lg font-semibold mb-2">Bio</h3>
+      <p class="text-sm mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisi vel consectetur.</p>
+
+      <h3 class="text-lg font-semibold mb-2">Learning Progress</h3>
+      <div class="bg-gray-700 rounded-full h-5 w-full overflow-hidden mb-4">
+        <div class="bg-yellow-400 h-full" style="width: 60%;"></div>
+      </div>
+      <p class="text-sm">60% Complete – 120 words learned</p>
+    </div>
+  </div>
+</div>
+{% endblock content %}
