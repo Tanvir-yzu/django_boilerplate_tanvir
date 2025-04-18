@@ -9,7 +9,7 @@ Boilerplate for any django projects with HTML, CSS, Bootstrap, REST API.
 
 1. Create a repository using this template or clone the repository
    ```
-   git clone git@github.com:sajib1066/django-boilerplate.git
+   git clone git@github.com:Tanvir-yzu/django_boilerplate_tanvir.git
    ```
 2. Create a virtual environment
    ```
